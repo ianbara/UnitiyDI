@@ -1,0 +1,35 @@
+0. Preparing
+
+Create an ASP.NET MVC with existing template in Visual Studio 2012 or 2013.
+
+Install package:
+
+EntityFramework (https://www.nuget.org/packages/EntityFramework/6.1.0)
+	Install-Package EntityFramework -Version 6.1.0
+Unity (https://www.nuget.org/packages/Unity/3.5.1404)
+	Install-Package Unity -Version 3.5.1404
+ Install-Package EntityFramework -Version 6.1.0
+Unity.Mvc5 (https://www.nuget.org/packages/Unity.Mvc5/)
+	Install-Package Unity.Mvc5
+
+
+1. Create a Table in Database
+
+First, we create a table with name being Articles in the database as below:
+
+Hide   Copy Code
+CREATE TABLE [dbo].[Articles]
+(
+    [Id] [uniqueidentifier] NOT NULL,
+    [Title] [nvarchar](100) NOT NULL,
+    [Summary] [nvarchar](500) NULL,
+    [ArticleContent] [nvarchar](max) NULL,
+    [ViewCount] [int] NULL,
+    [CreatedDate] [datetime] NULL,
+    [CreatedByUsername] [varchar](50) NULL,
+    [Tags] [nvarchar](500) NULL,
+    CONSTRAINT [PK_Articles] PRIMARY KEY CLUSTERED 
+    (
+        [Id] ASC
+    )
+)
